@@ -152,7 +152,7 @@ class CommentBlock {
         if (!this.isValidSubmit()) return;
 
         const comment = this.createComment();
-
+        this._commentsNumber.textContent++;
         this._comments.prepend(comment);
         this._form.reset();
         this.setUserIcon();
@@ -176,6 +176,7 @@ class CommentBlock {
     handleDeleteBtn(event) {
         const comment = event.target.closest(".comments__item");
         comment.remove();
+        this._commentsNumber.textContent--;
     }
 
     handleEnterClick(event) {
