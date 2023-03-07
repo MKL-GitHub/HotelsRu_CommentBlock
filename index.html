@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блок с комментариями</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <main class="main">
+            <section class="comment-block">
+                <div class="comment-block__heading">
+                    <a href="#comments" class="comment-block__heading-link">Комментарии</a>
+                    <div class="comment-block__comments-number"><span id="comments-number">0</span>Комментариев</div>
+                </div>
+                
+                <form action="" method="post" name="commentsForm">
+                    <div class="user-inputs">
+                        <div class="user-inputs__user-data">
+                            <div class="user-icon" id="user-icon"></div>
+                            <div class="user-inputs__name-date">
+                                <div class="user-inputs__name-container">
+                                    <input type="text" name="username" placeholder="Имя" autocomplete="off">
+                                </div>
+                                <div data-is-empty="true" class="user-inputs__date-container">
+                                    <input type="date" name="date">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-inputs__text-container"><textarea name="text" placeholder="Оставьте свой комментарий..."></textarea></div>
+                        <input type="submit" class="user-inputs__submit">
+                    </div>
+                    
+                </form>
+                
+                <div class="comments" id="comments"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="sources/js/comment-block.js"></script>
+</body>
+</html>
