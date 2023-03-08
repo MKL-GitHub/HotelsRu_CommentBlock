@@ -7,7 +7,6 @@ class CommentBlock {
     _text;
     _submitBtn;
     _comments;
-    
 
     constructor() {
         this._commentsNumber = document.getElementById("comments-number");
