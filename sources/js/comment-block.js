@@ -153,6 +153,7 @@ class CommentBlock {
 
         const comment = this.createComment();
         this._commentsNumber.textContent++;
+        this.formatCommentTitleName();
         this._comments.prepend(comment);
         this._form.reset();
         this.setUserIcon();
@@ -177,6 +178,7 @@ class CommentBlock {
         const comment = event.target.closest(".comments__item");
         comment.remove();
         this._commentsNumber.textContent--;
+        this.formatCommentTitleName();
     }
 
     handleEnterClick(event) {
@@ -185,6 +187,22 @@ class CommentBlock {
         if (event.key == "Enter" && isTextFocused == "false") {
             console.log(isTextFocused, "asdfasdf")
             this.handleSubmit(event);
+        }
+    }
+
+    formatCommentTitleName() {
+        const commentsTitle = this._commentsNumber.parentElement.children[1];
+        const commentsNumber = this._commentsNumber.textContent.slice(-2);
+        const checkNumber = commentsNumber < 15 ? +commentsNumber : +commentsNumber.slice(-1);
+
+        if (checkNumber == 1) {
+            commentsTitle.textContent = "Комментарий";
+        }
+        else if (checkNumber >= 2 && checkNumber <= 4) {
+            commentsTitle.textContent = "Комментария";
+        }
+        else {
+            commentsTitle.textContent = "Комментариев";
         }
     }
 
