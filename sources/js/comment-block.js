@@ -117,7 +117,7 @@ class CommentBlock {
     }
 
     isValidSubmit() {
-        let hasOnlyLetters = !/[^a-zA-Zа-яА-Я ]/.test(this._name.value);
+        let hasOnlyLetters = !/[^a-zA-Zа-яА-Я ёЁ]/.test(this._name.value);
 
         if (!hasOnlyLetters || this._name.value.length < 2) {
             this._name.setAttribute("data-is-valid", false);
